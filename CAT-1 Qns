@@ -1,6 +1,32 @@
-Write a C program to divide the integer array into two halves using function
-recursion. Call the user-defined “divide” function recursively, with the left half
-of the split array being passed as an argument for that function. Let the
-recursive function to get executed until the array size becomes one. Count the
-number of iterations to reach the base condition. Explain the working
-procedure of recursive function with stack structure
+//1.Write a C program to divide the integer array into two halves using function
+//recursion. Call the user-defined “divide” function recursively, with the left half
+//of the split array being passed as an argument for that function. Let the
+//recursive function to get executed until the array size becomes one. Count the
+//number of iterations to reach the base condition. Explain the working
+//procedure of recursive function with stack structure
+#include <stdio.h>
+void divide(int arr[], int low, int high);
+int main() {
+   int arr[100], n, i;
+   printf("Enter the size of the array: ");
+   scanf("%d", &n);
+   printf("Enter the elements of the array:\n");
+   for (i = 0; i < n; i++) {
+      scanf("%d", &arr[i]);
+   }
+   divide(arr, 0, n - 1);
+   return 0;
+}
+void divide(int arr[], int low, int high) {
+   static int count = 0;
+   int mid
+   if (low < high) {
+      mid = (low + high) / 2;
+      divide(arr, low, mid);
+      divide(arr, mid + 1, high);
+   }
+   count++;
+   if (low == high) {
+      printf("The number of iterations to reach base condition is: %d\n", count);
+   }
+}
